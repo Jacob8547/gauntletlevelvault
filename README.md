@@ -9,4 +9,3 @@ This mod allows you to play all the gauntlet levels on the servers to get the st
 * [Geode CLI](https://github.com/geode-sdk/cli)
 * [Bindings](https://github.com/geode-sdk/bindings/)
 * [Dev Tools](https://github.com/geode-sdk/DevTools)
-"# gauntletlevelvault" 
