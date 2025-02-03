@@ -1,0 +1,14 @@
+{
+	"geode": "4.2.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "jacob375.default",
+	"name": "Gauntlet Level Vault",
+	"version": "v1.0.0",
+	"developer": "Jacob375",
+	"description": "This mod allows you to play all the gauntlet levels on the servers to get the stars you deserve!"
+}

@@ -1,0 +1,1 @@
+In each gauntlet, there now should be a button which will show you all the levels on the server.
