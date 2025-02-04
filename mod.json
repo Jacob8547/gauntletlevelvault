@@ -10,5 +10,12 @@
 	"name": "Gauntlet Level Vault",
 	"version": "v1.0.2",
 	"developer": "Jacob375",
-	"description": "This mod allows you to play all the gauntlet levels on the servers to get the stars you deserve!"
+	"description": "This mod allows you to play all the gauntlet levels on the servers to get the stars you deserve!",
+	"dependencies": [
+        {
+            "id": "geode.node-ids",
+            "version": ">=v1.19.0",
+            "importance": "required"
+        }
+    ]
 }
