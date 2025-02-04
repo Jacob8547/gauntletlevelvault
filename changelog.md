@@ -1,3 +1,6 @@
+# 1.0.2
+- Fixed bug :(
+
 # 1.0.1
 - Code simplifying by hiimjasmine00
 
