@@ -1,3 +1,6 @@
+# 1.0.3
+- Added node-ids dependency
+
 # 1.0.2
 - Fixed bug :(
 
