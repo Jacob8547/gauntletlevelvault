@@ -1,3 +1,6 @@
+# 1.0.4
+- Improved mod clarity with an additional button :)
+
 # 1.0.3
 - Added node-ids dependency
 
