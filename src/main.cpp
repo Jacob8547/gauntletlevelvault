@@ -85,7 +85,7 @@ class $modify(MyGauntletSelectLayer, GauntletSelectLayer)
 	{
 		FLAlertLayer::create(
 			"Gauntlet Level Vault",
-			"<cj>Enter a gauntlet! There is a button near the top that let's you play the levels!</c>",
+			"<cj>Enter a gauntlet! There is a button near the top that lets you play the levels!</c>",
 			"OK")
 			->show();
 
