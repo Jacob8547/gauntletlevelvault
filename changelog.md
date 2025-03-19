@@ -1,3 +1,6 @@
+# 1.0.5
+- Improvements & fixed spelling errors
+
 # 1.0.4
 - Improved mod clarity with an additional button :)
 
