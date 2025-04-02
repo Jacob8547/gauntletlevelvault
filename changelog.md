@@ -1,3 +1,6 @@
+# 1.0.6
+- IOS support
+
 # 1.0.5
 - Improvements & fixed spelling errors
 
