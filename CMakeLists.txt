@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_OSX_ARCHITECTURES "arm64")
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(Default VERSION 1.0.6)
+project(Default VERSION 1.0.7)
 
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED
