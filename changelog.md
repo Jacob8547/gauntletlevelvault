@@ -1,5 +1,11 @@
+# 1.0.8
+- iOS support
+
+# 1.0.7
+- Another iOS support fail
+
 # 1.0.6
-- IOS support
+- iOS support fail
 
 # 1.0.5
 - Improvements & fixed spelling errors
