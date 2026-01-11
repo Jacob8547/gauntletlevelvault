@@ -21,14 +21,12 @@ class $modify(MyGauntletLayer, GauntletLayer)
 			this,
 			menu_selector(MyGauntletLayer::gauntlet));
 
-		gauntletbutton->setPosition({16.25, 60.25});
-		gauntletbutton->setZOrder(5);
 		gauntletbutton->setID("gauntlet-levels"_spr);
 
 		auto menu = GauntletLayer::getChildByID("exit-menu");
 		menu->addChild(gauntletbutton);
 
-		GauntletLayer::updateLayout();
+		menu->updateLayout();
 
 		return true;
 	}
@@ -37,6 +35,7 @@ class $modify(MyGauntletLayer, GauntletLayer)
 	{
 		auto gauntlets = GameLevelManager::sharedState()->m_savedGauntlets;
 		auto gauntlet = static_cast<GJMapPack *>(gauntlets->objectForKey(std::to_string(static_cast<int>(m_gauntletType))));
+		log::info("gauntlet->m_levelStrings: {}", gauntlet->m_levelStrings);
 		auto searchObject = GJSearchObject::create(SearchType::Type19, gauntlet->m_levelStrings);
 		auto browserLayer = LevelBrowserLayer::create(searchObject);
 		auto scene = CCScene::create();
