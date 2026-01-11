@@ -35,7 +35,6 @@ class $modify(MyGauntletLayer, GauntletLayer)
 	{
 		auto gauntlets = GameLevelManager::sharedState()->m_savedGauntlets;
 		auto gauntlet = static_cast<GJMapPack *>(gauntlets->objectForKey(std::to_string(static_cast<int>(m_gauntletType))));
-		log::info("gauntlet->m_levelStrings: {}", gauntlet->m_levelStrings);
 		auto searchObject = GJSearchObject::create(SearchType::Type19, gauntlet->m_levelStrings);
 		auto browserLayer = LevelBrowserLayer::create(searchObject);
 		auto scene = CCScene::create();
@@ -56,26 +55,22 @@ class $modify(MyGauntletSelectLayer, GauntletSelectLayer)
 			return false;
 		}
 
-		auto buttonsprite = CCSprite::createWithSpriteFrameName("geode.loader/baseCircle_Medium_Green.png");
+		auto icon = CCSprite::createWithSpriteFrameName("island_new01_001.png");
+		icon->setScale(0.45);
+
+		auto buttonsprite = CircleButtonSprite::create(icon, CircleBaseColor::Green, CircleBaseSize::Medium);
 
 		auto alllevelsbutton = CCMenuItemSpriteExtra::create(
 			buttonsprite,
 			this,
 			menu_selector(MyGauntletSelectLayer::gauntlet));
 
-		auto icon = CCSprite::createWithSpriteFrameName("island_new01_001.png");
-		icon->setScale(0.45);
-
-		icon->setPositionX(23.375);
-		icon->setPositionY(24.5);
-		buttonsprite->addChild(icon);
-		alllevelsbutton->setPosition(30, 93);
 		alllevelsbutton->setID("all-gauntlet-levels"_spr);
 
 		auto menu = GauntletSelectLayer::getChildByID("top-right-menu");
 		menu->addChild(alllevelsbutton);
 
-		GauntletSelectLayer::updateLayout();
+		menu->updateLayout();
 
 		return true;
 	}
