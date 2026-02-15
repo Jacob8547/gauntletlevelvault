@@ -1,3 +1,6 @@
+# 1.1.0
+- Geode 5.0.0 compatibility
+
 # 1.0.9
 - Geode version bump to 4.7.0
 
