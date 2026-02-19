@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0-beta.1",
+	"geode": "5.0.0-beta.3",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -8,10 +8,10 @@
 	},
 	"id": "jacob375.gauntletlevelvault",
 	"name": "Gauntlet Level Vault",
-	"version": "v1.1.0",
+	"version": "v1.1.1",
 	"developer": "Jacob375",
 	"description": "This mod allows you to play all the gauntlet levels on the servers to get the stars you deserve!",
 	"dependencies": {
-		"geode.node-ids": "1.22.0"
+		"geode.node-ids": ">=1.22.0"
 	}
 }

@@ -1,3 +1,6 @@
+# 1.1.1
+- Bump Geode version 5.0.0-beta.3
+
 # 1.1.0
 - Geode 5.0.0 compatibility
 
