@@ -1,3 +1,7 @@
+# 1.1.2
+- Remove unnecessary garbage
+- Make button a little easier to look at
+
 # 1.1.1
 - Bump Geode version 5.3.0
 - Fix dependency issue
