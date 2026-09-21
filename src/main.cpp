@@ -3,7 +3,7 @@
 
 using namespace geode::prelude;
 
-// Modifies each GauntletLayer (Fire,Random,Ice,etc.)
+// Modifies each GauntletLayer (Fire, Random, Ice, etc.)
 class $modify(MyGauntletLayer, GauntletLayer)
 {
 	// If player is on screen, continue.
@@ -15,9 +15,11 @@ class $modify(MyGauntletLayer, GauntletLayer)
 			return false;
 		};
 
+		// Create a director (used for menu placement).
+		auto director = CCDirector::sharedDirector();
+
 		// Create the button icon based on the gauntlet the player is on.
-		auto gauntletlogo = CCSprite::createWithSpriteFrameName(GauntletNode::frameForType(p0).c_str());
-		gauntletlogo->setScale(0.5);
+		auto gauntletlogo = CCSprite::createWithSpriteFrameName("GJ_safeBtn_001.png");
 
 		// Create the button (logo, class_modified, function_when_clicked).
 		auto gauntletbutton = CCMenuItemSpriteExtra::create(
@@ -28,12 +30,25 @@ class $modify(MyGauntletLayer, GauntletLayer)
 		// Set the id of the button.
 		gauntletbutton->setID("gauntlet-levels"_spr);
 
-		// Add button to the menu.
-		auto menu = GauntletLayer::getChildByID("exit-menu");
-		menu->addChild(gauntletbutton);
+		// Create new menu on right side.
+		auto rightMenu = CCMenu::create();
+		rightMenu->setID("gauntlet-levels-menu"_spr);
+		rightMenu->setContentSize({32.5f, 125.f});
+		rightMenu->ignoreAnchorPointForPosition(false);
+		rightMenu->setAnchorPoint({0.5f, 0.5f});
+		rightMenu->setPosition({director->getScreenRight() - 25.f,
+								director->getScreenTop() - 64.25f});
 
-		// Update the menu to show button.
-		menu->updateLayout();
+		// Set button positioning. Add button to the menu.
+		gauntletbutton->setPosition({rightMenu->getContentSize().width / 2,
+									 rightMenu->getContentSize().height - gauntletbutton->getContentSize().height / 2});
+		rightMenu->addChild(gauntletbutton);
+
+		// Create a container to put menu/button in. (It crashes without it).
+		auto container = CCNode::create();
+		container->setID("gauntlet-levels-container"_spr);
+		container->addChild(rightMenu);
+		this->addChild(container);
 
 		return true;
 	}
@@ -57,47 +72,5 @@ class $modify(MyGauntletLayer, GauntletLayer)
 		auto trans = CCTransitionFade::create(0.5, scene);
 		// Displays scene.
 		CCDirector::sharedDirector()->pushScene(trans);
-	}
-};
-
-#include <Geode/modify/GauntletSelectLayer.hpp>
-
-class $modify(MyGauntletSelectLayer, GauntletSelectLayer)
-{
-	bool init(int p0)
-	{
-		if (!GauntletSelectLayer::init(p0))
-		{
-			return false;
-		}
-
-		auto icon = CCSprite::createWithSpriteFrameName("island_new01_001.png");
-		icon->setScale(0.45);
-
-		auto buttonsprite = CircleButtonSprite::create(icon, CircleBaseColor::Green, CircleBaseSize::Medium);
-
-		auto alllevelsbutton = CCMenuItemSpriteExtra::create(
-			buttonsprite,
-			this,
-			menu_selector(MyGauntletSelectLayer::gauntlet));
-
-		alllevelsbutton->setID("all-gauntlet-levels"_spr);
-
-		auto menu = GauntletSelectLayer::getChildByID("top-right-menu");
-		menu->addChild(alllevelsbutton);
-
-		menu->updateLayout();
-
-		return true;
-	}
-
-	void gauntlet(CCObject *obj)
-	{
-		// Creates and displays a text box.
-		FLAlertLayer::create(
-			"Gauntlet Level Vault",
-			"<cj>Enter a gauntlet! There is a button near the top that lets you play the levels!</c>",
-			"OK")
-			->show();
 	}
 };
