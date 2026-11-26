@@ -10,9 +10,7 @@ endif()
 
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-add_compile_definitions(NEEDS_DECOMP)
-
-project(Default VERSION 1.1.2)
+project(Default VERSION 1.1.3)
 
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED

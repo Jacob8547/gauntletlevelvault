@@ -1,3 +1,6 @@
+# 1.1.3
+- Support for Geode 6.x and Geometry Dash 2.2091
+
 # 1.1.2
 - Remove unnecessary garbage
 - Make button a little easier to look at
